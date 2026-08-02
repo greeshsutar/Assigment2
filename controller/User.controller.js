@@ -1,5 +1,18 @@
 
 let {pool} = require("pg");
+let env = require("dotenv");
+env.config();
+
+const pool = new Pool({
+user:process.env.DB_USER,
+password:DB_PASSWORD,
+host:DB_HOST,
+port:DB_PORT,
+database:DB_NAME
+})
+
+
+
 
 function login(req,res){
 
@@ -13,7 +26,9 @@ if(!email||!password){
 try{
 
 
-    storingData = await pool.query
+    storingData = await pool.query;
+
+
 }
 
 
