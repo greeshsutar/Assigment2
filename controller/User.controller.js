@@ -27,7 +27,7 @@ try{
 
      let token =  json.sign( {email:email},process.env.JWT_SECRET, {expiresIn="1h"})
      
-     res.status(201).send(token);
+    return  res.status(201).send(token);
     
 }
 catch(err){
