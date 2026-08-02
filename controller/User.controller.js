@@ -1,18 +1,9 @@
 
-let {pool} = require("pg");
+
 let env = require("dotenv");
+let bcrypt = require("bcrypt");
+const pool = require("../config/User.config");
 env.config();
-
-const pool = new Pool({
-user:process.env.DB_USER,
-password:DB_PASSWORD,
-host:DB_HOST,
-port:DB_PORT,
-database:DB_NAME
-})
-
-
-
 
 function login(req,res){
 
@@ -24,11 +15,22 @@ if(!email||!password){
 }
 
 try{
+   let haspassword = await bcrypt.hash(password,10);
+
+    storingData = await pool.query(
+    `insert into userdetail(username,password) 
+     values($1,$2) `, [username,haspassword]
+    )
+
+    return res.status(201).json({msg:"User Data Stored"});
+
+    
 
 
-    storingData = await pool.query;
 
-
+}
+catch(err){
+    return res.status(500).json({msg:err})
 }
 
 
