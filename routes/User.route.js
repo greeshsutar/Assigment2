@@ -13,3 +13,4 @@ app.get("/profile", authnticatingUser,   profile);
 
 
 }
+module.exports = allroutes;
