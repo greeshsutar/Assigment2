@@ -4,6 +4,7 @@ let bcrypt = require("bcrypt");
 let express = require("express")
 let app = express();
 let env = require("dotenv");
+const allroutes = require("./routes/User.route");
 env.config();
 
 app.use(express.json());
