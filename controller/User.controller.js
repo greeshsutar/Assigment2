@@ -34,9 +34,6 @@ catch(err){
     return res.status(500).json({msg:err})
 }
 
-
-
-
 }
 
 function profile(req,res){
@@ -60,4 +57,8 @@ function profile(req,res){
    }
 
 
+}
+module.exports = {
+    login,
+    profile
 }
