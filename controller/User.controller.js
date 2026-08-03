@@ -6,7 +6,7 @@ const pool = require("../config/User.config");
 const { json } = require("express");
 env.config();
 
-function login(req,res){
+async function login(req,res){
 
     let {email,password} = req.body;
 
@@ -36,8 +36,8 @@ catch(err){
 
 }
 
-function profile(req,res){
-   let {id} = req.params.id;
+async function profile(req,res){
+   let {id} = req.params;
    
    try{
    let existuser =await pool.query(
