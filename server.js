@@ -12,7 +12,7 @@ app.use(express.json());
 
 allroutes(app);
 
-const PORT = process.env.PORT || 3100;
+const PORT = 3100;
 
 app.listen(PORT, () => {
     console.log(`Server Connected on port ${PORT}`);
