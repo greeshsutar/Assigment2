@@ -8,10 +8,10 @@ env.config();
 
 async function login(req,res){
 
-    let {email,password} = req.body;
+    let {username,password} = req.body;
 
    
-if(!email||!password){
+if(!username||!password){
     return res.status(402).json({msg:"Enter All data"});
 }
 
