@@ -49,7 +49,7 @@ async function profile(req,res){
 
    
 
-    res.status(2).s(existuser.username)
+    res.status(200).send(existuser.rows[0].username)
 
    }  
    catch(err){
