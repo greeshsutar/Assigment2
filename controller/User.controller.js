@@ -3,7 +3,7 @@
 let env = require("dotenv");
 let bcrypt = require("bcrypt");
 const pool = require("../config/User.config");
-const { json } = require("express");
+let jwt = require("jsonwebtoken")
 env.config();
 
 async function login(req,res){
@@ -45,11 +45,11 @@ async function profile(req,res){
     where _id = $1`,[id]
    )
  
-   if(!existuser) return res.status(400).json({msg:"User Does Not Exist"});
+   if(existuser.length<0) return res.status(400).json({msg:"User Does Not Exist"});
 
    
 
-    res.status(200).send(existuser.username)
+    res.status(2).s(existuser.username)
 
    }  
    catch(err){
