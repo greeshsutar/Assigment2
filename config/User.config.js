@@ -1,4 +1,4 @@
-let {Pool} = require("pool");
+let {Pool} = require("pg");
 let env = require("dotenv");
 env.config();
 const pool = new Pool({
