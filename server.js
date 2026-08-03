@@ -8,9 +8,9 @@ let cors = require("cors");
 const allroutes = require("./routes/User.route.js");
 env.config();
 
+app.use(cors());
 app.use(express.json());
 
-app.use(cors());
 
 allroutes(app);
 
