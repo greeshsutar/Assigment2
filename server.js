@@ -1,24 +1,19 @@
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const allroutes = require("./routes/User.route");
 
-let dotenv = require("dotenv");
-let bcrypt = require("bcrypt");
-let express = require("express")
-let app = express();
-let env = require("dotenv");
-let cors = require("cors");
-const allroutes = require("./routes/User.route.js");
-env.config();
+dotenv.config();
+
+const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-
 allroutes(app);
 
+const PORT = process.env.PORT || 3100;
 
-app.listen(process.env,()=>{
-    console.log("Server Connect")
-})
-
-
-
-
+app.listen(PORT, () => {
+    console.log(`Server Connected on port ${PORT}`);
+});
