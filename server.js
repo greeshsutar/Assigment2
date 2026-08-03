@@ -4,6 +4,7 @@ let bcrypt = require("bcrypt");
 let express = require("express")
 let app = express();
 let env = require("dotenv");
+let ors = require("cors");
 const allroutes = require("./routes/User.route.js");
 env.config();
 
