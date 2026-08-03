@@ -18,7 +18,7 @@ if(!email||!password){
 try{
    let haspassword = await bcrypt.hash(password,10);
 
-    storingData = await pool.query(
+  const   storingData = await pool.query(
     `insert into userdetail(username,password) 
      values($1,$2) `, [username,haspassword]
     )
