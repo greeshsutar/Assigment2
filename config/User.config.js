@@ -1,5 +1,6 @@
 let {Pool} = require("pool");
 let env = require("dotenv");
+env.config();
 const pool = new Pool({
 user:process.env.DB_USER,
 password:process.env.DB_PASSWORD,
