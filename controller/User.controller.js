@@ -27,7 +27,7 @@ try{
 
      let token =  jwt.sign( {email:email},process.env.JWT_SECRET, {expiresIn:"1h"})
      
-    return  res.status(201).send(token);
+    return  res.status(201).json({msg:`your token is :${token}`});
     
 }
 catch(err){
